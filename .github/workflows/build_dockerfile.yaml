@@ -7,6 +7,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
+        name: "Checkout repository"
+      - run: echo "Repository ${{ github.repository }}@${{ github.ref }} has been cloned"
       - name: Build Docker Image
         run: docker build -t go-api:latest .
